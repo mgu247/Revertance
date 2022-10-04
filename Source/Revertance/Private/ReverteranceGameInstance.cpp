@@ -6,3 +6,7 @@
 class UPlayerData* UReverteranceGameInstance::getPlayerData() {
 	return playerdata;
 }
+
+void UReverteranceGameInstance::setPlayerData(class UPlayerData* newPlayerData) {
+	playerdata = newPlayerData;
+}

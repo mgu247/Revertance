@@ -19,10 +19,14 @@ class REVERTANCE_API UReverteranceGameInstance : public UGameInstance
 	
 public:
 	// PlayerData Instance
-	UPROPERTY(BlueprintReadWrite, category="Inventory")
+	UPROPERTY(BlueprintReadWrite, category = "Inventory")
 	class UPlayerData* playerdata;
 
 	// Used to get the PlayerData Instance
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	class UPlayerData* getPlayerData();
+
+	// Used to set the PlayerData Instance
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setPlayerData(class UPlayerData* newPlayerData);
 };
