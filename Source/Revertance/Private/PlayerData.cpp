@@ -5,7 +5,7 @@
 
 
 UPlayerData::UPlayerData() {
-	balance = 1000;
+	balance = 1400;
 }
 
 void UPlayerData::addAbility(int32 itemId) {
