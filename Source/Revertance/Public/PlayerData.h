@@ -18,6 +18,9 @@ class REVERTANCE_API UPlayerData : public UObject
 {
 	GENERATED_BODY()
 public:
+	// Constructor
+	UPlayerData();
+
 	// stores all the abilities of the user
 	UPROPERTY(BlueprintReadWrite, category = "Inventory")
 	TArray<struct FAbilityWrapper> abilities;

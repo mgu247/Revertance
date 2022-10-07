@@ -10,3 +10,7 @@ class UPlayerData* UReverteranceGameInstance::getPlayerData() {
 void UReverteranceGameInstance::setPlayerData(class UPlayerData* newPlayerData) {
 	playerdata = newPlayerData;
 }
+
+void UReverteranceGameInstance::Init() {
+	playerdata = NewObject<UPlayerData>();
+}

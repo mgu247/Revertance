@@ -29,4 +29,8 @@ public:
 	// Used to set the PlayerData Instance
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	void setPlayerData(class UPlayerData* newPlayerData);
+
+
+	// Used for initializing the game instance
+	void Init() override;
 };

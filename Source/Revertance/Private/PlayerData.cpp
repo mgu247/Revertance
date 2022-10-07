@@ -4,6 +4,10 @@
 #include "PlayerData.h"
 
 
+UPlayerData::UPlayerData() {
+	balance = 1000;
+}
+
 void UPlayerData::addAbility(int32 itemId) {
 	struct FAbilityWrapper newAbilityWrapper = FAbilityWrapper();
 	newAbilityWrapper.abilityId = itemId;
