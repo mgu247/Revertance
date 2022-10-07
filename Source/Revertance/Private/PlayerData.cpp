@@ -117,6 +117,7 @@ bool UPlayerData::enoughBalance(int32 price) {
 }
 
 void UPlayerData::equipWeapon(struct FWeaponWrapper newWeapon) {
+	dequipWeapon();
 	struct FWeaponWrapper weaponToRemove = FWeaponWrapper();
 	for (struct FWeaponWrapper weapon : weapons) {
 		if (weapon == newWeapon) {
@@ -143,6 +144,7 @@ struct FWeaponWrapper UPlayerData::getEquippedWeapon() {
 }
 
 void UPlayerData::equipAbility(struct FAbilityWrapper newAbility) {
+	dequipAbility();
 	struct FAbilityWrapper abilityToRemove = FAbilityWrapper();
 	for (struct FAbilityWrapper ability: abilities) {
 		if (ability == newAbility) {
@@ -169,6 +171,7 @@ struct FAbilityWrapper UPlayerData::getEquippedAbility() {
 }
 
 void UPlayerData::equipArmor(struct FArmorWrapper newArmor) {
+	dequipArmor();
 	struct FArmorWrapper armorToRemove = FArmorWrapper();
 	for (struct FArmorWrapper armor : armors) {
 		if (armor == newArmor) {
