@@ -149,4 +149,9 @@ public:
 	// Returns equipped armor
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FArmorWrapper getEquippedArmor();
+
+
+	// Sets up the inventory for tutorial purposes
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void initializeTutorialInventory();
 };

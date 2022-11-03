@@ -22,6 +22,14 @@ public:
 	UPROPERTY(BlueprintReadWrite, category = "Inventory")
 	class UPlayerData* playerdata;
 
+	// PlayerData Instance for the tutorial
+	UPROPERTY(BlueprintReadWrite, category = "Tutorial")
+	class UPlayerData* tutorialdata;
+
+	// Flag for if we are in the tutorial
+	UPROPERTY(BlueprintReadWrite, category = "Tutorial")
+	bool tutorial = false;
+
 	// Used to get the PlayerData Instance
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	class UPlayerData* getPlayerData();
@@ -29,6 +37,14 @@ public:
 	// Used to set the PlayerData Instance
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	void setPlayerData(class UPlayerData* newPlayerData);
+
+	// Used to initialize the components for starting the tutorial
+	UFUNCTION(BlueprintCallable, category = "Tutorial")
+	void startTutorial();
+
+	// Used to end the tutorial
+	UFUNCTION(BlueprintCallable, category = "Tutorial")
+	void endTutorial();
 
 
 	// Used for initializing the game instance
