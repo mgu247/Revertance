@@ -196,3 +196,13 @@ void UPlayerData::dequipArmor() {
 struct FArmorWrapper UPlayerData::getEquippedArmor() {
 	return equippedArmor;
 }
+
+void UPlayerData::initializeTutorialInventory() {
+	dequipWeapon();
+	dequipAbility();
+	dequipArmor();
+
+	addWeapon(3); // Heavy cannon
+	addAbility(1); // Behemoth Rune
+	addArmor(3); // Cloak of Flames
+}
