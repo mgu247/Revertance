@@ -31,6 +31,10 @@ TArray<struct FAbilityWrapper> UPlayerData::getAbilities() {
 	return abilities;
 }
 
+void UPlayerData::setAbilities(TArray<struct FAbilityWrapper> newAbilities) {
+	abilities = newAbilities;
+}
+
 struct FAbilityWrapper UPlayerData::getAbilityFromInstanceId(int32 instanceId) {
 	for (struct FAbilityWrapper ability : abilities) {
 		if (ability.instanceId == instanceId) {
@@ -63,6 +67,10 @@ TArray<struct FWeaponWrapper> UPlayerData::getWeapons() {
 	return weapons;
 }
 
+void UPlayerData::setWeapons(TArray<struct FWeaponWrapper> newWeapons) {
+	weapons = newWeapons;
+}
+
 struct FWeaponWrapper UPlayerData::getWeaponFromInstanceId(int32 instanceId) {
 	for (struct FWeaponWrapper weapon : weapons) {
 		if (weapon.instanceId == instanceId) {
@@ -93,6 +101,10 @@ bool UPlayerData::buyArmor(int32 itemId, int32 price) {
 
 TArray<struct FArmorWrapper> UPlayerData::getArmors() {
 	return armors;
+}
+
+void UPlayerData::setArmors(TArray<struct FArmorWrapper> newArmors) {
+	armors = newArmors;
 }
 
 struct FArmorWrapper UPlayerData::getArmorFromInstanceId(int32 instanceId) {
