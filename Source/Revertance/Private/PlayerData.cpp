@@ -218,3 +218,59 @@ void UPlayerData::initializeTutorialInventory() {
 	addAbility(2); // Behemoth Rune
 	addArmor(2); // Cloak of Flames
 }
+
+int32 UPlayerData::getMaxLevel() {
+	return maxLevel;
+}
+
+void UPlayerData::setMaxLevel(int32 newLevel) {
+	maxLevel = newLevel;
+}
+
+TArray<int32> UPlayerData::getSellableWeapons() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 1, 2, 3 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 1, 2, 3, 4, 5 };
+		return forSale;
+	}
+	else {
+		forSale = { 1, 2, 3, 4, 5, 6, 7 };
+		return forSale;
+	}
+}
+
+TArray<int32> UPlayerData::getSellableAbilities() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 3 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 3, 4 };
+		return forSale;
+	}
+	else {
+		forSale = { 3, 4, 1 };
+		return forSale;
+	}
+}
+
+TArray<int32> UPlayerData::getSellableArmors() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 1, 2 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 1, 2, 3, 4 };
+		return forSale;
+	}
+	else {
+		forSale = { 1, 2, 3, 4, 5, 6 };
+		return forSale;
+	}
+}

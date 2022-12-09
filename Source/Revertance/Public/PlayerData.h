@@ -52,6 +52,9 @@ public:
 	// used to assign unique item IDs
 	int32 instanceIdGenerator = 0;
 
+	// max level
+	UPROPERTY(BlueprintReadWrite, category = "Inventory")
+	int32 maxLevel = 0;
 
 
 	// Used to add an Ability without cost. Typically used at the end of levels
@@ -161,6 +164,27 @@ public:
 	// Returns equipped armor
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FArmorWrapper getEquippedArmor();
+
+
+	// Gets the max level
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	int32 getMaxLevel();
+
+	// Sets the max level
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setMaxLevel(int32 newLevel);
+
+	// Gets the currently available weapon IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableWeapons();
+
+	// Gets the currently available ability IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableAbilities();
+
+	// Gets the currently available armor IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableArmors();
 
 
 	// Sets up the inventory for tutorial purposes
