@@ -66,6 +66,10 @@ public:
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FAbilityWrapper> getAbilities();
 
+	// Sets the Abilities of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setAbilities(TArray<struct FAbilityWrapper> newAbilities);
+
 	// Obtain the Ability with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FAbilityWrapper getAbilityFromInstanceId(int32 instanceId);
@@ -82,6 +86,10 @@ public:
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FWeaponWrapper> getWeapons();
 
+	// Sets the Weapons of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setWeapons(TArray<struct FWeaponWrapper> newWeapons);
+
 	// Obtain the Weapon with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FWeaponWrapper getWeaponFromInstanceId(int32 instanceId);
@@ -97,6 +105,10 @@ public:
 	// Obtain all the Armors the player owns
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FArmorWrapper> getArmors();
+
+	// Sets the Armprs of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setArmors(TArray<struct FArmorWrapper> newArmors);
 
 	// Obtain the Armor with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
