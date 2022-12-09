@@ -56,6 +56,18 @@ public:
 	UPROPERTY(BlueprintReadWrite, category = "Inventory")
 	int32 maxLevel = 0;
 
+	// health obtained from killing bosses
+	UPROPERTY(BlueprintReadWrite, category = "Boss")
+	int32 bonusBossHealth = 0;
+
+	// attack obtained from killing bosses
+	UPROPERTY(BlueprintReadWrite, category = "Boss")
+	int32 bonusBossAttack = 0;
+
+	// defense obtained from killing bosses
+	UPROPERTY(BlueprintReadWrite, category = "Boss")
+	int32 bonusBossDefense = 0;
+
 
 	// Used to add an Ability without cost. Typically used at the end of levels
 	UFUNCTION(BlueprintCallable, category = "Inventory")
@@ -185,6 +197,30 @@ public:
 	// Gets the currently available armor IDs
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<int32> getSellableArmors();
+
+	// Get Bonus Boss Health
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	int32 getBonusBossHealth();
+
+	// Set Bonus Boss Health
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	void setBonusBossHealth(int32 newBonusBossHealth);
+
+	// Get Bonus Boss Attack
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	int32 getBonusBossAttack();
+
+	// Set Bonus Boss Attack
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	void setBonusBossAttack(int32 newBonusBossAttack);
+
+	// Get Bonus Boss Defense
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	int32 getBonusBossDefense();
+
+	// Set Bonus Boss Health
+	UFUNCTION(BlueprintCallable, category = "Boss")
+	void setBonusBossDefense(int32 newBonusBossDefense);
 
 
 	// Sets up the inventory for tutorial purposes

@@ -32,6 +32,8 @@ TArray<struct FAbilityWrapper> UPlayerData::getAbilities() {
 }
 
 void UPlayerData::setAbilities(TArray<struct FAbilityWrapper> newAbilities) {
+	dequipAbility();
+
 	abilities = newAbilities;
 }
 
@@ -68,6 +70,8 @@ TArray<struct FWeaponWrapper> UPlayerData::getWeapons() {
 }
 
 void UPlayerData::setWeapons(TArray<struct FWeaponWrapper> newWeapons) {
+	dequipWeapon();
+
 	weapons = newWeapons;
 }
 
@@ -104,6 +108,8 @@ TArray<struct FArmorWrapper> UPlayerData::getArmors() {
 }
 
 void UPlayerData::setArmors(TArray<struct FArmorWrapper> newArmors) {
+	dequipArmor();
+
 	armors = newArmors;
 }
 
@@ -273,4 +279,28 @@ TArray<int32> UPlayerData::getSellableArmors() {
 		forSale = { 1, 2, 3, 4, 5, 6 };
 		return forSale;
 	}
+}
+
+int32 UPlayerData::getBonusBossHealth() {
+	return bonusBossHealth;
+}
+
+void UPlayerData::setBonusBossHealth(int32 newBonusBossHealth) {
+	bonusBossHealth = newBonusBossHealth;
+}
+
+int32 UPlayerData::getBonusBossAttack() {
+	return bonusBossAttack;
+}
+
+void UPlayerData::setBonusBossAttack(int32 newBonusBossAttack) {
+	bonusBossAttack = newBonusBossAttack;
+}
+
+int32 UPlayerData::getBonusBossDefense() {
+	return bonusBossDefense;
+}
+
+void UPlayerData::setBonusBossDefense(int32 newBonusBossDefense) {
+	bonusBossDefense = newBonusBossDefense;
 }
