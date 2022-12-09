@@ -52,6 +52,9 @@ public:
 	// used to assign unique item IDs
 	int32 instanceIdGenerator = 0;
 
+	// max level
+	UPROPERTY(BlueprintReadWrite, category = "Inventory")
+	int32 maxLevel = 0;
 
 
 	// Used to add an Ability without cost. Typically used at the end of levels
@@ -65,6 +68,10 @@ public:
 	// Obtain all the Abilities the player owns
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FAbilityWrapper> getAbilities();
+
+	// Sets the Abilities of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setAbilities(TArray<struct FAbilityWrapper> newAbilities);
 
 	// Obtain the Ability with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
@@ -82,6 +89,10 @@ public:
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FWeaponWrapper> getWeapons();
 
+	// Sets the Weapons of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setWeapons(TArray<struct FWeaponWrapper> newWeapons);
+
 	// Obtain the Weapon with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FWeaponWrapper getWeaponFromInstanceId(int32 instanceId);
@@ -97,6 +108,10 @@ public:
 	// Obtain all the Armors the player owns
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	TArray<struct FArmorWrapper> getArmors();
+
+	// Sets the Armprs of the player
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setArmors(TArray<struct FArmorWrapper> newArmors);
 
 	// Obtain the Armor with the given instance ID
 	UFUNCTION(BlueprintCallable, category = "Inventory")
@@ -149,6 +164,27 @@ public:
 	// Returns equipped armor
 	UFUNCTION(BlueprintCallable, category = "Inventory")
 	struct FArmorWrapper getEquippedArmor();
+
+
+	// Gets the max level
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	int32 getMaxLevel();
+
+	// Sets the max level
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	void setMaxLevel(int32 newLevel);
+
+	// Gets the currently available weapon IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableWeapons();
+
+	// Gets the currently available ability IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableAbilities();
+
+	// Gets the currently available armor IDs
+	UFUNCTION(BlueprintCallable, category = "Inventory")
+	TArray<int32> getSellableArmors();
 
 
 	// Sets up the inventory for tutorial purposes

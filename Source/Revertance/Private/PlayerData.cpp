@@ -31,6 +31,10 @@ TArray<struct FAbilityWrapper> UPlayerData::getAbilities() {
 	return abilities;
 }
 
+void UPlayerData::setAbilities(TArray<struct FAbilityWrapper> newAbilities) {
+	abilities = newAbilities;
+}
+
 struct FAbilityWrapper UPlayerData::getAbilityFromInstanceId(int32 instanceId) {
 	for (struct FAbilityWrapper ability : abilities) {
 		if (ability.instanceId == instanceId) {
@@ -63,6 +67,10 @@ TArray<struct FWeaponWrapper> UPlayerData::getWeapons() {
 	return weapons;
 }
 
+void UPlayerData::setWeapons(TArray<struct FWeaponWrapper> newWeapons) {
+	weapons = newWeapons;
+}
+
 struct FWeaponWrapper UPlayerData::getWeaponFromInstanceId(int32 instanceId) {
 	for (struct FWeaponWrapper weapon : weapons) {
 		if (weapon.instanceId == instanceId) {
@@ -93,6 +101,10 @@ bool UPlayerData::buyArmor(int32 itemId, int32 price) {
 
 TArray<struct FArmorWrapper> UPlayerData::getArmors() {
 	return armors;
+}
+
+void UPlayerData::setArmors(TArray<struct FArmorWrapper> newArmors) {
+	armors = newArmors;
 }
 
 struct FArmorWrapper UPlayerData::getArmorFromInstanceId(int32 instanceId) {
@@ -205,4 +217,60 @@ void UPlayerData::initializeTutorialInventory() {
 	addWeapon(1); // Heavy cannon
 	addAbility(2); // Behemoth Rune
 	addArmor(2); // Cloak of Flames
+}
+
+int32 UPlayerData::getMaxLevel() {
+	return maxLevel;
+}
+
+void UPlayerData::setMaxLevel(int32 newLevel) {
+	maxLevel = newLevel;
+}
+
+TArray<int32> UPlayerData::getSellableWeapons() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 1, 2, 3 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 1, 2, 3, 4, 5 };
+		return forSale;
+	}
+	else {
+		forSale = { 1, 2, 3, 4, 5, 6, 7 };
+		return forSale;
+	}
+}
+
+TArray<int32> UPlayerData::getSellableAbilities() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 3 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 3, 4 };
+		return forSale;
+	}
+	else {
+		forSale = { 3, 4, 1 };
+		return forSale;
+	}
+}
+
+TArray<int32> UPlayerData::getSellableArmors() {
+	TArray<int32> forSale;
+	if (maxLevel == 0) {
+		forSale = { 1, 2 };
+		return forSale;
+	}
+	else if (maxLevel == 1) {
+		forSale = { 1, 2, 3, 4 };
+		return forSale;
+	}
+	else {
+		forSale = { 1, 2, 3, 4, 5, 6 };
+		return forSale;
+	}
 }
