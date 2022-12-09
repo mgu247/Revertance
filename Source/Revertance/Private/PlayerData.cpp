@@ -202,7 +202,7 @@ void UPlayerData::initializeTutorialInventory() {
 	dequipAbility();
 	dequipArmor();
 
-	addWeapon(3); // Heavy cannon
-	addAbility(1); // Behemoth Rune
-	addArmor(3); // Cloak of Flames
+	addWeapon(1); // Heavy cannon
+	addAbility(2); // Behemoth Rune
+	addArmor(2); // Cloak of Flames
 }
